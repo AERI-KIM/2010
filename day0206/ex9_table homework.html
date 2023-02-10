@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+ table.basic_table{
+    width: 500px;
+    height: 300px;
+    border: 5px inset white;
+ }
+
+table.basic_table>tbody>tr>td{
+border-bottom: 5px double gray;
+border-right: 1px double gray;
+border-left: 1px double gray;
+}
+
+
+/* rowspan 은 디자인 안됨
+   table.basic_table>tbody>tr>td>rowspan{
+    background-color: pink;
+} */
+</style>
+ 
+    
+</head>
+<body>
+    <table class="basic_table">
+        <caption> 기본태그속성</caption>
+       
+            <tbody>
+            <tr>
+                <td rowspan="3" valign="top" bgcolor="skyblue">일</td>
+                <td colspan="3" bgcolor="pink">이</td>
+            </tr>
+            <tr>
+                <td colspan="2"bgcolor="pink">삼</td>
+                <td rowspan="3" valign="bottom" bgcolor="skyblue">사</td>
+            </tr>
+            <tr>
+                <td>오</td>
+                <td>육</td>
+            </tr>
+            <tr>
+                <td colspan="3" bgcolor="pink">칠</td>
+            </tr>
+
+        </tbody>
+      
+
+    </table>
+</body>
+</html>

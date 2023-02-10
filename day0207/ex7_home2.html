@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+
+    <style>
+        body,BODY *{
+            font-size: 1.5rem;
+            font-family: 'Single Day' 
+        }
+       
+     
+
+      
+    </style>
+</head>
+<body>
+    <div class="imgs">
+        <img src="../IMage/moviestar/13.jpg" id="img1" width="300" >
+        <br><br>
+
+    </div>
+
+    <div class="btns">
+
+        <button type="button" id="btn1">점점작게</button>
+        <button type="button" id="btn2">점점크게</button>
+        <br><br>
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        
+        var p1=document.getElementById("img1");
+        var b1=document.getElementById("btn1");
+        var b2=document.getElementById("btn2");
+
+
+
+        b1.onclick=function(){
+            var size=p1.getAttribute("width")
+            p1.setAttribute("width",Number(size)+10)
+        }
+        
+
+        document.getElementById("plus").onclick=function(){
+            p.setAttribute("width","size-10");
+        }
+    </script>
+
+
+</body>
+</html>

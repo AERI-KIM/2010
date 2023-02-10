@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        /* solid 를 쓰려면 ; 안에 작성해야함 */
+        div.box>div{
+           border: 1px solid gray;
+           width: 400px;
+           height: 130px;
+           margin-bottom:10px;
+        }
+/* background-image :url('') 따움표, 가로 필수 */
+        #a{
+            /* X,Y방향으로 반복된다:기본값 */
+            background-image: url('../photo0203/1.jpg');
+            /* 백그라운드 이미지의 사이즈 변경 */
+            background-size: 30PX 30PX;
+            border: 10px dotted deepskyblue;
+        }
+        #b{
+            background-image: url('../photo0203/2.jpg');
+            background-size: 80px 80px;
+                                                                        /* repeat (x,y) 가능  */
+            background-repeat: repeat-x;
+            border: 10px double green;
+        }
+        #c{
+            border:10px groove gold;
+            background-image: url('../IMage/animal/C1.png');
+            background-repeat: no-repeat;  /*no-repeat  이미지 반복안함   */
+            opacity:0.3; /*( 흐리게: 0~1 )  전체적으로(액자와사진 모두) 흐려지기 때문에 포토샵 후 가져오는 것이 더 좋음 */
+            /* background-size: 400px 130px;   */
+             /*오른쪽 아래 기준인데 안들어감. #e background url 방식으로 가능함  */
+           
+            
+        }
+        #d{
+            border:10px inset orangered;
+            background-image: url('../IMage/mainImage/K-041.png');
+            background-size: 100% 100%;
+            height: 200px;
+            color: white;
+            font-size: 30px;
+        }
+        /* background- size:
+        auto: 원래 배경 이미지 크기만큼만 표시
+        contain: 지정한 요소안에 배경이미지가 다 들어오도록 확대/축소
+        cover: 지정한 요소를 다 덮도록 배경이미지를 확대/출소
+        크기 값: 100px 200px 이런식으로 지정
+        백분율: 지정한 요소를 기준으로 백분율로 지정*/
+        #e{
+            border: 10px dashed rebeccapurple;
+            background: url('../IMage/shop/14.jpg') no-repeat right top;
+            background-size: contain;
+        }
+        #f{
+        border: 20px outset olivedrab;
+        background:url('../IMage/animal/C4.png') no-repeat right bottom;
+        background-size: 50px;
+        opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <!-- 위에 스타일에 넣는건 배경이미지이기 때문에 여기에 작성한 것은 나타남 -->
+        <div id="d">안녕하세요</div>
+        <div id="e"></div>
+        <div id="f"></div>
+    </div>
+   <div class="hello">배경 이미지에 대한 공부</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        BODY *{
+            font-size: 1.5rem;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- border-collapse: collapse (칸과칸사이에 빈틈을 없앰)
+                          separat  기본값. 칸과칸사이에 빈틈을 만듬-->
+    <table border="1" style="border-collapse: collapse;">
+        <!-- caption 제목 -->
+        <caption><b>[표1]</b></caption>
+        <tr height="50" bgcolor="orange">
+            <!-- th 는 td 와 달리 (가운데, 굵게) 속성을 가진다.-->
+            <th width="100">이름</th>
+            <th width="170">핸드폰</th>
+            <th width="200">주소</th>
+        </tr>
+        <tr height="100" align="center">  <!-- trd에서 정렬할경우 행전체에 적용 -->
+            <td bgcolor=pink>강호동</td>
+            <td bgcolor="#ffgg57">010-111-5222</td>
+            <td style="background-color: grey; color:yellow;">서울시 강남구</td>
+        </tr>
+        <tr height="100">
+            <!-- align : right. left (기본값)
+                 valign : top, mlddle(기본값),bottom -->
+            <td valign="top">유재석</td>
+            <td align="right" valign="bottom">010-144-5241</td>
+            <td align="right" valign="top" bgcolor="green">서울시 영등포구</td>
+        </tr>
+        <!-- 4번째 줄은 3칸을 합쳐서 이미지 넣기 -->
+        <tr height="150">
+                                                                                    <!-- colspan -->
+            <td colspan="3" align="center" bgcolor="pink">
+                <img src="../IMage/mainImage/K-036.png" width="200">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

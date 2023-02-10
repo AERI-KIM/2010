@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+          body,BODY *{
+            font-size: 1.2rem;
+            font-family: 'jua' 
+        }
+
+        .photo{ 
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    //  moviestar  사진과 함께 출력할 이름을 배열에 넣은후 사진과 이름 출력하기
+    var starname=mew Array();
+    starname.push("여진구");
+    starname.push("김우빈");
+    starname.push("김영광");
+    starname.push("박서준");
+    starname.push("최지우");
+    starname.push("한예슬");
+    starname.push("황정음");
+    starname.push("전지현");
+    starname.push("강동원");
+    starname.push("김태희");
+
+    var starphoto=new Array();
+    starphoto.push("../image/moviestar/1.jpg")
+    starphoto.push("../image/moviestar/2.jpg")
+    starphoto.push("../image/moviestar/3.jpg")
+    starphoto.push("../image/moviestar/4.jpg")
+    starphoto.push("../image/moviestar/5.jpg")
+    starphoto.push("../image/moviestar/6.jpg")
+    starphoto.push("../image/moviestar/7.jpg")
+    starphoto.push("../image/moviestar/8.jpg")
+    starphoto.push("../image/moviestar/9.jpg")
+    starphoto.push("../image/moviestar/10.jpg")
+
+    </script>
+
+    <table border="1" style="width: 600px;border-collapse: collapse;">
+        <caption><b>[무비스타 엔터 소속 배우들]</b></caption>
+        <tr>
+            <th></th>
+            <th></th><th></th><th></th><th></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th><th></th><th></th><th></th>
+        </tr>
+
+
+    
+
+        <!-- if 문 사용 5개 이후 아래로 내려가게 만들기 -->
+        <script>
+
+            var s="";
+            // var i="";
+
+            
+// for(var i=0;i<starphoto.length;i++){
+
+// document.write(`<img src="${starphoto[i]}" class="photo">`);
+
+// }
+
+
+
+            for(var idx in starphoto){
+
+                s=`
+                <tr>
+            <td><img src="${starphoto[idx]}"></td>
+            <td>${starname[idx]}</td>            
+        </tr>
+                `;
+                document.write(s);
+
+
+            }
+
+
+         
+
+
+
+
+        </script>
+
+      
+
+    </table>
+    
+</body>
+</html>

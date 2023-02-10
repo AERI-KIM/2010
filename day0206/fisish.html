@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+
+        BODY *{
+
+            font-size: 1.5rem;
+
+            font-family: 'Single Day';
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pasa">
+        <input type="button" value="alert란?"
+        onclick="alert('버튼 1을 클릭했어요')">
+
+        <br><br>
+        <button type="button"
+        onclick="prompt('너 이름이 뭐니?')">prompt란?</button>
+
+        <br><br>
+        <button type="button"
+        onclick="confirm('데이터를 저장할까요?')">conform이란?</button>
+    </div>
+    <hr>
+
+    <button type="button" onclick="test1()">메세지</button>
+    <h3 id="result1"></h3>
+
+    <script>
+        function test1()
+        {
+            alert('오늘도 행복한 하루');
+            document.getElementById("result1").innerHTML="<b> 응답했다는 증거</b>";
+        }
+    </script>
+
+    <button type="button" onclick="test2()">이름입력</button>
+                                     <!-- 여기에 왜 h2가 들어가는지? h6를 넣어도 변함이 없음-->
+    <h2 id="result2"></h2>
+
+    <script>
+        function test2()
+        {
+            var name=prompt("너의 이름은 뭐니?","이효리");
+
+            document.getElementById("result2").innerHTML=
+            `<b> 내 이름은<span style='color:green'>${name}</span>입니다</b>`;
+        }
+    </script>
+
+    <button type="button" onclick="test3()">컨펌</button>
+    <h2 id="result3"></h2>
+
+    <script>
+        function test3()
+        {
+            var ans=confirm("데이터를 저장할까요?");
+            console.log(ans);
+
+            if(ans==true)
+            document.getElementById("result3").innerText="데이터를 잘 저장했어요"
+            else
+            document.getElementById("result3").innerText="데이터 저장을 취소했어요"
+
+        }
+    </script>
+
+
+
+</body>
+</html>

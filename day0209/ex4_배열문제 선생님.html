@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+          body,BODY *{
+            font-size: 1.2rem;
+            font-family: 'jua' 
+        }
+
+        .photo{ 
+            width: 120px;
+            height: 180px;
+            border: 1px solid gray;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //  moviestar  사진과 함께 출력할 이름을 배열에 넣은후 사진과 이름 출력하기
+        var starname=new Array();
+        starname.push("여진구");
+        starname.push("김우빈");
+        starname.push("김영광");
+        starname.push("박서준");
+        starname.push("최지우");
+        starname.push("한예슬");
+        starname.push("황정음");
+        starname.push("전지현");
+        starname.push("강동원");
+        starname.push("김태희");
+        starname.push("ㅇ");
+        starname.push("ㅎ");
+        starname.push("ㅈ희");
+        starname.push("ㄴ");
+        starname.push("ㄴㅇ");
+
+
+    
+    </script>
+    
+        <table border="1" style="width: 600px;border-collapse: collapse;">
+            <caption><b>[무비스타 엔터 소속 배우들]</b></caption>
+            <tr>
+                <script>
+                    var s="";
+// 사진 갯수를 늘리려면 위에 push에 이름을 증가시키고 , i<=숫자를 변겅 )
+
+                    for(var i=1;i<=15;i++){
+
+                        //`` 방식 
+
+                        // s+=`
+                        // <td align=center>
+                        //     <img src="../image/moviestar/${i}.jpg" class="photo">
+                        //     <br>
+                        //     <b>${starname[i-1]}</b>
+                        //     </td>
+                        // `;
+
+                        //  "" 방식
+
+                        s+="<td align=center>";
+                            s+="<img src='../image/moviestar/"+i+".jpg' class='photo'>";
+                            s+="<br><b>"+starname[i-1]+"</b>";
+
+                            s+="</td>"
+
+                        // 아래 if 문 뜻은 5칸 이후로 다시 칸을 닫고 열어라 라는 뜻 
+                        if(i%5==0){
+                            s+="</tr><tr>";
+                        }
+                    }
+                    document.write(s);
+                </script>
+            </tr>
+        </table>
+</body>
+</html>

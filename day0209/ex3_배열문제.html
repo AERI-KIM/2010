@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+          body,BODY *{
+            font-size: 1.2rem;
+            font-family: 'jua' 
+        }
+
+        .photo{ 
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            border-radius: 100px;
+        }
+        .h2{
+            position: absolute;
+            left: 500px;
+            right: 500px;
+        }
+        </style>
+</head>
+<body>
+    <script>
+        // 각종 데이터를 다양한 방법으로 배열에 담아보자
+        var arrphoto=new Array();
+        arrphoto.push("../image/food/10.jpg");
+        arrphoto.push("../image/food/1.jpg");
+        arrphoto.push("../image/food/2.jpg");
+        arrphoto.push("../image/shop/27.jpg");
+        arrphoto.push("../image/animal/c8.png");
+
+
+        var arrtitle=["햄마요덮밥","샌드위치","원피스","투피스","귀염둥이인형"];
+
+        var arrprice=new Array();
+        arrprice[0]=11000;
+        arrprice[1]=9000;
+        arrprice[2]=35000;
+        arrprice[3]=42000;
+        arrprice[4]=19000;
+
+        var arrcolor=["#fafad2","#c0c0c0","#ffb6c1","#98fb98","#ffe4e1"];
+
+
+    </script>
+
+       <table border="1" style="border-collapse: collapse;width: 500px;">
+        <tr bgcolor="#66cdaa">
+            <td>번호</td><td>상품명</td><td>사진</td><td>가격</td>
+        </tr>
+        <script>
+            var s="";
+            for(var idx in arrtitle)
+            {
+
+            s+="<tr bgcolor="+arrcolor[idx]+">";
+            s+="<td align=center>"+(Number(idx)+1)+"</td>";
+            s+="<td>"+arrtitle[idx]+"</td>";
+            s+=`<td><img src="${arrphoto[idx]}"; class="photo"></td>`;
+            s+="<td>"+arrprice[idx]+"</td>";
+            s+="</tr>";
+            }
+
+
+            document.write(s);
+            
+            
+        </script>
+         
+             </table>
+
+          <h2>총사용금액 : </h2>   
+</body>
+</html>

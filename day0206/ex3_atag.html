@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+        a:link{
+            color: black;
+            /* text-decoration (기본 설정= 밑줄) 없애기 */
+            text-decoration: none; 
+        }
+        /* 한번 방문하면 색상 바뀜, 언더바x */
+        a:visited{
+            color: gray;
+            text-decoration: none;
+        }
+        /*마우스 가져가 색상 바뀜, 언더바 o  */
+        a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>naver 글자를 클릭시 현재 페이지가 네이버 페이지로 전환</h2>
+    <a href="http://www.naver.com">NAVER</a>
+
+    <h2>nate 글자를 클릭시 네이트가 새 페이지로 열림</h2>
+    <!-- biank, new 둘다 새 페이지 생성-->
+    <a href="http://www.nate.com" target="_blank">NATE</a>
+<br>
+<h2>이미지 클릭시 구글메인으로 이동합니다</h2>
+<a href="http://google.com" target="_new">
+    <img src="../photo0203/animal/C4.png" title="구글로이동" >
+</a>
+
+<h2>02-03 예제3</h2>
+<a href="../day0203/ex3_image.html">2월3일 예제3</a>
+<br>
+<h2>frame 안에 네이트가 나와요 </h2>
+<!-- 광고 형식을 올리는 것인가? position,left,top 위치주면 가능할 듯?-->
+<iframe src="http://www.nate.com" width="400" height="300" border="1"></iframe>
+
+<h2>frame 안에 02.03 에제2번 나오게 해보세요!</h2>
+<iframe src="../day0203/ex2_tag.html" width="400" height="300"></iframe> 
+
+
+</body>
+</html>
