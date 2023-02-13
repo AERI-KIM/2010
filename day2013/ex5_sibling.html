@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one">
+        <img src="../IMage/animal/C1.png" width="130">
+        <div class="two">
+            <h4>have a nice day!!!</h4>
+            <div class="three">
+                <img src="../IMage/animal/C8.png" width="100">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 하얀 고양이 사진에 마우스를 올리면 아래 글자의 속성을 변경 (크기:30 px. 배경색:lightgray,글자색:blue)   아래 검정 고양이 사진의  border 를 설정한다
+
+        // 마우스를 벗어나면 다시 추가한 스타일을 제거한다
+
+        var catimg=document.querySelector(".one>img");
+        catimg.onmouseover=function(){
+            // nextElementSibling: ㄷ음 div 태그(.two)
+            this.nextElementSibling.querySelector("h4").style.fontSize="30px";
+            this.nextElementSibling.querySelector("h4").style.backgroundColor="lightgray";
+            this.nextElementSibling.querySelector("h4").style.color="blue";
+
+            this.nextElementSibling.querySelector(".three>img").style.border="5px solid orange";
+
+            // 마우스를 벗어나면 다시 추가한 스타일을 제거한다
+
+            catimg.onmouseout=function(){
+                this.nextElementSibling.querySelector("h4").style.fontSize="17px";
+            this.nextElementSibling.querySelector("h4").style.backgroundColor="white";
+            this.nextElementSibling.querySelector("h4").style.color="black";
+
+            this.nextElementSibling.querySelector(".three>img").style.border="";
+            }
+
+
+        }
+
+
+
+
+// -----------------------------------------------------------------------------------------------------------내가한거
+        // document.querySelector(".one>img").onmouseover=function(){
+        //     var text1=this.nextElementSibling.innerText;
+        //     document.querySelector(".two").innerText=text1;
+        
+        //     // .text1.style="fontsize:30px; bgcolor:lightgray; color:blue; "
+        //     // 속성 안넣음
+
+        //     var ph1=this.nextElementSibling.nextElementSibling.innerHTML;
+        //     document.querySelector("img",".three").innerHTML=ph1;
+        //     // 사진 안뜸 , border 안넣음 
+
+            
+
+        //     document.querySelector(".one>img").onmouseout=function(){
+        //         document.querySelector(".two")
+
+        //     }
+
+
+        // }
+    </script>
+</body>
+</html>
