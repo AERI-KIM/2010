@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+          body,BODY *{
+            font-size: 1.5rem;
+            font-family: 'Single Day' 
+        }
+
+        .line1{
+            border: 10px groove pink;
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center; 
+        }
+
+        .line2{
+            border: 1px solid gray;
+            width: 500px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center; 
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // 마우스를 올리면 class 에 line2 적용, 벗어나면 다시 line1 적용
+            // 기본 클래스명인 message는 기본으로 준다 
+            // .message 중 첫번째 요소값만 얻기
+
+            var m=document.querySelector(".message");
+            m.onmouseover=function(){
+                this.setAttribute("class","message line1");
+            }
+
+            m.onmouseout=function(){
+                this.setAttribute("class","message line2");
+            }
+        
+
+        // .images아래.box 안에 잇는 이미지에만 이ㅔㄴ트를 적용해보자
+        // 복수개의 엘리먼트들을 얻으려면 queryselectall 사용
+        var photos=document.querySelectorAll(".images>.box>img");
+        for(var p of photos){
+            // 기존 이미지 저장의 변수선언
+            var pre_image;
+            p.onmouseover=function(){
+                //  기본이미지를 얻어놓는다.
+                pre_image=this.getAttribute("src");
+                // 새로운 이미지 변경
+                this.setAttribute("src","../image/animal/c8.png");
+            }
+                // 원이미지 백업
+            p.onmouseout=function(){
+                this.setAttribute("src",pre_image);
+            }
+        }
+
+
+    }   //onload 
+     </script>
+</head>
+<body>
+    <!-- 클래스를 줄때 클래스 "" 안에 한칸 띄고 다른 설정을 넣을 수 있다 -->
+    <div class="message line2" > 오늘은 즐거운 월요일입니다.</div>
+
+     <div class="message" >안녕하세요</div>
+     <hr>
+     <div class="images">
+        <img src="../IMage/food/10.jpg" width="100">
+        <div class="box">
+            <img src="../IMage/animal/C3.png" width="100">
+        </div>
+        <div class="box">
+            <img src="../IMage/animal/C5.png" width="100">
+        </div>
+        <div class="box">
+            <img src="../IMage/animal/C6.png" width="100">
+        </div>
+     </div>
+</body>
+</html>
