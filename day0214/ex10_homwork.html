@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+       body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }
+        div.box{
+            width: 400px;
+            height: 200px;
+            background-color:aqua;
+            border: 10px;
+            border-color: gold;
+            border-style: groove;
+            margin-left: 20px;
+            margin-top: 20px;
+            border-radius: 0px;
+            text-align:center;
+            line-height: 150px;
+            text
+        }  
+    </style>
+      <script>
+         window.onload=function(){
+
+            // 1.안녕하세요 
+            document.getElementById("txt1").onkeyup=function(e){
+                if(e.keyCode==13){
+                    let v=this.value;
+                    document.querySelector(".t1").innerHTML=v;
+                }
+            }
+
+            // 2. 테두리 (체크박스) 
+            document.querySelector("#chkborder").onclick=function(){
+                if(this.checked){
+                    document.querySelector(".box").style.border="10px groove gold";
+                   
+                }else{
+                    document.querySelector(".box").style.border="none";
+                }
+            }
+
+            // 3.글자크기 
+            let font=document.querySelectorAll(".font");
+            for(let i=0;i<font.length;i++){
+                font[i].onclick=function(){
+                    document.querySelector(".t1").style.fontSize=this.value;
+                }
+            }
+
+            // 4.글자색
+           let fcolor=document.querySelectorAll(".fcolor");
+           for(let i=0;i<fcolor.length;i++){
+            fcolor[i].onchange=function(){
+                document.querySelector(".t1").style.color=this.value;
+            }
+           }
+
+            //5. 배경색
+            let bcolor=document.querySelectorAll(".bcolor");
+           for(let i=0;i<bcolor.length;i++){
+            bcolor[i].onchange=function(){
+                document.querySelector(".box").style.backgroundColor=this.value;
+            }
+           }
+
+        //    6.글꼴선택
+        let fontf=document.querySelectorAll(".fontf");
+            for(let i=0;i<fontf.length;i++){
+                fontf[i].onclick=function(){
+                    document.querySelector(".t1").style.fontFamily=this.value;
+                }
+            }
+
+
+
+
+         }
+
+      </script>
+</head>
+
+<body>
+    <b>입력후 엔터를 누르세요:</b>
+    <input type="text" id="txt1" value="안녕하세요">
+    &nbsp; &nbsp;
+    <label><input type="checkbox" id="chkborder">테두리</label>
+    <br>
+    <b>글자크기:</b>
+    <label><input type="radio" class="font" value="10px" name="fonts">10px</label>
+    <label><input type="radio" class="font" value="20px" name="fonts">20px</label>
+    <label><input type="radio" class="font" value="30px" name="fonts">30px</label>
+    <label><input type="radio" class="font" value="35px" name="fonts">35px</label>
+    <br>
+    <b>글자색:</b>
+    <input type="color" class="fcolor" value="#6a5acd">
+    &nbsp; &nbsp;
+    <b>배경색:</b>
+    <input type="color" class="bcolor" value="#008080">
+    <br>
+    <b>글꼴선택:</b>
+    <label><input type="radio" class="fontf" value="Jua" name="fontfs">Jua</label>
+    <label><input type="radio" class="fontf" value="Nanum Pen Script" name="fontfs">Nanum</label>
+    <label><input type="radio" class="fontf" value="Single Day" name="fontfs">Single</label>
+    <label><input type="radio" class="fontf" value="Gamja Flower" name="fontfs">Gamja</label>
+    <br><br><br>
+
+    <div class="box">
+        
+        
+        <h2 class="t1"></h2>
+        
+    </div>
+  
+</body>
+</html>
