@@ -13,7 +13,7 @@ function test1()
     if(true){
         var a=5;  //덮어쓴다. 10번 라인의 a 변수에 덮어쓴다
         let b=6;  //새로 생성
-        console.log(`a=${1},b=${b}`);  //5,6
+        console.log(`a=${a},b=${b}`);  //5,6
     }
     console.log(`a=${a},b=${b}`);  //5,4
 }
