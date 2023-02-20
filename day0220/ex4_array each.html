@@ -43,6 +43,9 @@
     </script>
 
     <hr>
+    <br>
+    <br>
+
     <div class="two"></div>
     <script>
         let array2=new Array();
@@ -61,6 +64,22 @@
 
 
             // $("div.two").append(`<div class=photo " IMG src":${item}>${item}</div>`);
+        });
+    </script>
+
+    <hr>
+    <div class="three"></div>
+    <script>
+        // 배열에 json형태의 데이터 넣기
+        let array3=[
+            {"message":"hello","color":"red"},
+            {"message":"안녕하세요","color":"green"},
+            {"message":"반가워요","color":"pink"}
+        ];
+
+        $.each(array3,function(idx,item){
+            $("div.three").append("<h3 style='color:"+item.color+"'>"+item.message+"</h3>");
+
         });
     </script>
 </body>

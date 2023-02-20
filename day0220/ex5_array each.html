@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        body * {
+            font-family: 'Single Day';
+        }
+
+        #show>div {
+            width: 400px;
+            font-size: 20px;
+            height: 60px;
+            line-height: 60px;
+            padding: 10px;
+            border: 3px groove darkblue;
+        }
+    </style>
+    <script>
+        $(function () {
+            let data = [
+                { "font": "Gamja Flower", bcolor: "pink", tcolor: "gray", "message": "자바 스크립트" },
+                { "font": "jua", bcolor: "yellow", tcolor: "blue", "message": "스프링부트" },
+                { "font": "Lobster", bcolor: "orange", tcolor: "black", "message": "happy day" },
+                { "font": "Single Day", bcolor: "#eee8aa", tcolor: "#db7096", "message": "제이쿼리" },
+                { "font": "Nanum Pen Script", bcolor: "32e8b587", tcolor: "#e6e6fa", "message": "오라클" }
+            ];
+
+            $.each(data, function (idx, item) {
+
+                // 방법1 ""
+
+                // let s="<div style='background-color:"+item.bcolor+";color:"+item.tcolor+";font-family:"+item.font+"'>"
+                // +item.message+"</div>";
+                // $("#show").append(s);
+                // })
+
+                // 방법2 ``
+                let s = `<div style='background-color:${item.bcolor};color:${item.tcolor};font-family:${item.font}'>
+                ${item.message}</div>`;
+                $("#show").append(s);
+            });
+
+            let data2 = [
+            { "name": "김태희", "score":[90,100,80],"hp": "010-222-3333"},
+            { "name": "김태희", "score":[90,70,70],"hp": "010-222-3333"}
+        ]
+
+        // $.each(data2,function(idx,item){
+
+        //     let s2="이름:"+item.name+",점수3과목:";
+        //     $.each(item.score,function(idx2,jumsoo){
+
+        //         s2+=jumsoo+"&nbsp;";
+        //     });
+        //         s2+="핸드폰:"+item.hp+"<br>";
+
+        //     $("#show2").append(s2);
+        //  })
+
+
+        .each(data2,function(idx,item){
+
+   let s2=`이름:${item.name},점수3과목:`;
+   $.each(item.score,function(idx2,jumsoo){
+
+      s2+=jumsoo+"&nbsp;";
+  });
+        s2+=`핸드폰:${item.hp}<br>`;
+
+   $("#show2").append(s2);
+ });
+
+       });
+
+     
+    </script>
+</head>
+
+<body>
+    <div id="show"></div>
+    <div id="show2"></div>
+</body>
+
+</html>
