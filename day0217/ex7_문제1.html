@@ -52,14 +52,55 @@
         //div.two 의 위치를 절대좌표로 left:400px, top:100px
         //        border,width,height 적당한 값으로 지정
 
+        $("div.two").css({
+            "position":"absolute",
+            "left":"500px",
+            "top":"50px",
+            "border":"5px solid orange",
+            "width":"400px",
+            "height":"300px",
+            "padding":"10px"
+        })
+
         //div.one 의 border-bottom 을 "10px double gray" 로 설정
+
+        $("div.one").css({
+            "border-bottom":"10px double gray",
+            "width":"300px"
+        })
 
         //div.one 아래의 h2에 cursor 속성 추가하기        
 
+        $("div.one h2").css("cursor","pointer");
+
         //마우스를 div.two 아래의 h2에 마우스를 올리면
         // 그 다음 h4태그로부터 color값을 얻어서 h2 의 배경색으로 지정
+
+        $("div.one h2").hover(function(){
+           let bg=$(this).next().attr("color");
+                                     //변수일때는 "" 안씀    
+            $(this).css("background-color",bg);
+
+               // 부모태그의 형제중 img 태그의 속성src를 넣는다 
+               let imgsrc=$(this).parent().siblings("img").attr("src");
+               console.log(imgsrc);
+                                    //변수일때는 "" 안씀    
+               $("div.two img").attr("src",imgsrc);
+
+
+               let nexttext=$(this).siblings().text();
+               $("div.two h2").text(nexttext);
+
+               let pretext=$(this).parent().siblings("h3").text();
+               $("div.two h3").text(pretext);
+ 
+        },function(){
+            $(this).css("background-color","#fff");
+        });
+
         //마우스 위치 위의 사진을 우측 사진에 나오게 하고
         //아래의 h4,위의 h3 값을 얻어서 우측태그에 넣기
-    </script>
+
+        </script>
 </body>
 </html>
