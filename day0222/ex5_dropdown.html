@@ -63,6 +63,54 @@
         "margin-left":"50px",
         "margin-top":"20px",
     });
+
+    // dropdown 이벤트
+    $("ul.dropdown-menu a.dropdown-item").click(function(){
+      let imgsrc=$(this).attr("src");
+      let imgtext=$(this).text();
+      console.log(imgsrc,imgtext);
+
+      // 이미지에 적용 
+      $("img.photo").attr("src",imgsrc);
+
+      //text 적용  b.shopname
+      $("b.shopname").text(imgtext);
+
+
+    });
+
+  //  // range 마우스 이동시 
+  //   $(".photosize").mousemove(function(){
+  //     //현재값 얻기 
+  //     let w=$(this).val();
+  //     //b.shopwidth 에 출력
+  //     $("b.shopwidth").text(w);
+  //     // 사진 너비에도 적용
+  //     $("img.photo").css("width",w+"px");
+  //   });
+
+
+  //   //  키보드로 조작시에도 적용
+  //   $(".photosize").change(function(){
+  //     //현재값 얻기 
+  //     let w=$(this).val();
+  //     //b.shopwidth 에 출력
+  //     $("b.shopwidth").text(w);
+  //     // 사진 너비에도 적용
+  //     $("img.photo").css("width",w+"px");
+  //   });
+
+    // 두개의 이벤트가 안에 로직이 같다. 이 경우 두개의 이벤트를 묶어주면 좋다 
+
+    $(".photosize").bind("mousemove change",function(){
+      let w=$(this).val();
+      //b.shopwidth 에 출력
+      $("b.shopwidth").text(w);
+      // 사진 너비에도 적용
+      $("img.photo").css("width",w+"px");
+    });
+
+
   </script>
 
 
