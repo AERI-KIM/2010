@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    ​ <style>
+        body,
+        body * {
+            font-family: 'Single Day';
+        }
+
+        div.mytooltip {
+            line-height: 1.5;
+            color: white;
+            width: 200px;
+            background-color: #f90;
+            border: 2px solid wheat;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 30px;
+            position: absolute;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .view {
+            cursor: pointer;
+            background-color: bisque;
+        }
+        ol.today li{
+            cursor: pointer;
+            font-size: 22px;
+            width: 200px;
+        }
+        ol.today li:hover{
+            background-color: burlywood;
+        
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("a").bind({
+                mousemove: function (e) {
+                    console.log(e.pageX, e.pageY)
+                    $("div.mytooltip").css({
+                        "left": e.pageX + "px",
+                        "top": e.pageY + "px"
+                    });
+
+                },
+                mouseover: function () {
+                    $("div.mytooltip").fadeIn('fast');
+                    $("div.mytooltip").html(`
+                    java<br>
+                    html<br>
+                    css<br>
+                    myqul`).css("background-coloer", "#f90")
+                },
+                mouseout: function () {
+                    $("div.mytooltip").fadeOut('fast');
+                }
+            });
+
+            $("b.view").bind({
+                mouseover:function(){
+                    // 태그에 들어가 잇는 색상얻기
+                    let color=$(this).attr("color");
+                    let text=$(this).text();
+                    $("div.mytooltip").css("background-color",color);
+                    $("div.mytooltip").fadeIn();
+
+                },
+                mouseout:function(){
+                    $("div.mytooltip").fadeOut();
+
+                },
+                mousemove:function(e){
+                    $("div.mytooltip").css(
+                        {
+                            left: (e.pageX+10) + "px",
+                        top: (e.pageY+10) + "px"
+                        }
+                    )
+                }
+            });
+            // fadein fadeout
+
+            // $("ol.today li").bind({
+            //     mouseover:function(){
+            //         let photo=$(this).attr("photo");
+            //         let text=$(this).text();
+            //         // $("div.mytooltip").css("src",ph);
+            //         // $("div.mytooltip").fadeIn();
+
+            //         $("div.mytooltip").html(
+            //             `<b>${text} </b><br>
+            //                 <img src=${photo} width=100>`
+            //         );
+            //         $("div.mytooltip").fadeIn();
+
+
+            //     },
+            //     mouseout:function(){
+            //         $("div.mytooltip").fadeOut();
+
+
+            //     },
+            //     mousemove:function(e){
+            //          $("div.mytooltip").css({
+            //             left: (e.pageX+10) + "px",
+            //             top: (e.pageY+10) + "px"
+            //          })
+            //     }
+
+            // show,hide 
+
+            $("ol.today li").bind({
+                mouseenter:function(){
+                    let photo=$(this).attr("photo");
+                    let text=$(this).text();
+
+                    $("div.mytooltip").html(
+                        `<b>${text} </b><br>
+                            <img src=${photo} width=100>`
+                    );
+                    $("div.mytooltip").show();
+
+
+                },
+                mouseout:function(){
+                    $("div.mytooltip").hide();
+
+
+                },
+                mousemove:function(e){
+                     $("div.mytooltip").css({
+                        left: (e.pageX+10) + "px",
+                        top: (e.pageY+10) + "px"
+                     })
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h4 class="alert alert-info"> tooltip 링크 부분에 마우스를 올려보세요</h4>
+    <br><br>
+
+    <a style="font-size: 25px;cursor: pointer;">tooltip</a>
+
+    <pre>
+        인천의 한 호텔 객실에서 직접 대마를 키워 동료들과 함께 피운 40대 남성 직원이 경찰에 붙잡혔다.
+
+                인천경찰청 <b class="view" color="pink">마약범죄수사계는 마약류 관리에 관한 법률 위반 혐의</b>로 A(47)씨 등 호텔 직원 3명을 불구속 입건했다고 23일 밝혔다.
+                
+                A씨는  <b class="view" color="green">지난해 인천시 중구 영종도 한 호텔 객실에서 재배한 대마를</b> 동료 직원 2명과 함께 피운 혐의를 받고 있다.
+                
+                그는 직원에게 숙식을 제공한 이 호텔에서 자신의 객실에 전기 조명과 배수 시설을 설치해 놓고 대마를 직접 키웠다.
+                
+                <b class="view" color="orange">이 호텔의 또 다른 직원이 우연히 이 사실을 알게 됐고,</b> 관련 내용을 경찰에 제보한 것으로 알려졌다.
+                
+                경찰은 A씨가 투숙한 객실에서 대마초 70g과 씨앗 형태인 대마 종자 155개를 찾아 압수했다.
+                
+                경찰 관계자는 "A씨는 과거에 마약 관련 처벌을 받은 전력은 없었다"며 "대마를 같이 피운 동료들과 함께 검찰에 송치했다"고 말했다.
+    </pre>
+    <h2>오늘 나의 식사 및 쇼핑 목록 입니다</h2>
+    <ol type="1" class="today">
+        <li photo="../image/food/1.jpg">에그 샌드위치</li>
+        <li photo="../image/food/12.jpg">망고빙수</li>
+        <li photo="../image/shop/8.jpg">꽈베기 회색 스웨터</li>
+        <li photo="../image/shop/29.jpg">여름용 모자</li>
+
+    </ol>
+    <div class="mytooltip">
+        java<br>
+        html<br>
+        css<br>
+        myqul
+    </div>
+
+
+</body>
+
+</html>
